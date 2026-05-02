@@ -1,0 +1,17 @@
+name: Using Variable Workflow
+on:
+  workflow_dispatch:
+env:
+  cloud: Google_Cloud
+jobs:
+  greeting_job:
+    name: My First Job
+    runs-on: ubuntu-latest
+    env: 
+      Greeting: Hello 
+    steps:
+      - name: Hello Sunil Today is Sunday
+        run: echo "$Greeting $first_name is using $cloud!"
+        env: 
+          first_name: Sunil
+      
