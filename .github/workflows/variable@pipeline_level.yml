@@ -1,17 +1,17 @@
-name: Using Variable Workflow
+name: Workflow Using Configuration variables||| Github Action
+run-name: Created by ${{ github.actor }}
 on:
-  workflow_dispatch:
-env:
-  cloud: Google_Cloud
+  workflow_dispatch: 
+env: 
+  Cloud: Azure Cloud
 jobs:
-  greeting_job:
-    name: My First Job
+  First_Job:
+    name: My First Job 
     runs-on: ubuntu-latest
     env: 
       Greeting: Hello 
     steps:
-      - name: Hello Sunil Today is Sunday
-        run: echo "$Greeting $first_name is using $cloud!"
-        env: 
-          first_name: Sunil
-      
+      - name: My First Step
+        run: echo "$Greeting $User is using $Cloud to build Infra
+        env:
+          User: Sunil
