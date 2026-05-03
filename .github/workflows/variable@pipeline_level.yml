@@ -12,6 +12,6 @@ jobs:
       Greeting: Hello 
     steps:
       - name: My First Step
-        run: echo "$Greeting $User is using $Cloud to build Infra
+        run: echo "$Greeting $User is using $Cloud to build Infra"
         env:
           User: Sunil
