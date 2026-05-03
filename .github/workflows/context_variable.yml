@@ -1,0 +1,29 @@
+name: Context Variable Workflow
+run-name: Created by ${{ github.actor }}
+on:
+  workflow_dispatch:
+env:
+  Cloud: Azure Cloud
+jobs:
+  First_Job:
+    name: My First Job
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello 
+    steps:
+      - name: Print Context Variable|| Github Action||
+        run: | 
+          echo "repository name is ${{ github.repository }}"
+          echo "workflow name is ${{ github.workflow }}"
+          echo "workflow trigger by ${{ github.actor }}"
+          echo "workflow id is ${{ github.actor_id }}"
+          echo "repository owner is ${{ github.repository_owner }}"
+          echo "repository owner id is $ {{ github.repository_owner_id }}
+          echo "workflow run number is ${{ github.run_number }}"
+          echo "workflow run id is ${{ github.run_id }}"
+          
+      - name: Print Final Message 
+        run: echo "$Greeting $User is using $Cloud to build ${{ vars.PROJECT_ID }}"
+        env:
+          User: Sunil
+    
